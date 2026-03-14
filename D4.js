@@ -118,27 +118,28 @@ const giveMeRandom = function (n) {
     arr.push(numeri);
   }
   console.log(arr);
+  return arr;
 };
 giveMeRandom(17);
 
 /* EXTRA 1
- Scrivi una funzione chiamata "checkArray" che riceve un array di numeri casuali (creati con la funzione "giveMeRandom") 
+ Scrivi una funzione chiamata "checkArray" che riceve un array di numeri casuali (creati con la funzione "checkArray") 
  e per ogni elemento stampa in console se il suo valore è maggiore di 5 o no.
  La funzione deve inoltre ritornare la somma di tutti i valori maggiori di 5.
 */
-let totaleNumeri = 0;
-const checkArray = function () {
+function checkArray(arr) {
+  let somma = 0;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] > 5) {
-      totaleNumeri += arr[i];
-      console.log("maggiore di 5");
+      console.log("maggiore", arr[i]);
+      somma += arr[i];
     } else {
-      console.log("minore di 5");
+      console.log("minore", arr[i]);
     }
   }
-  console.log(totaleNumeri);
-};
-checkArray();
+  return somma;
+}
+console.log(checkArray(giveMeRandom(10)));
 
 /* EXTRA 2
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". 
